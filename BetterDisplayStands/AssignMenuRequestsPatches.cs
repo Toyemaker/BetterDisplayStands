@@ -24,8 +24,16 @@ namespace BetterDisplayStands
 
             foreach (Entity encourager in encouragers)
             {
-                COrderEncourager oe = new COrderEncourager() { Probability = ConfigData.DisplayStandEffectiveness.Value };
-                World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData(encourager, oe);
+                if (ConfigData.EnableMod.Value)
+                {
+                    COrderEncourager oe = new COrderEncourager() { Probability = ConfigData.DisplayStandEffectiveness.Value };
+                    World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData(encourager, oe);
+                }
+                else
+                {
+                    COrderEncourager oe = new COrderEncourager() { Probability = 0.8f };
+                    World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData(encourager, oe);
+                }
             }
         }
     }
