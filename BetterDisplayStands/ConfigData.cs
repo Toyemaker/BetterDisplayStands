@@ -10,6 +10,7 @@ namespace BetterDisplayStands
     public static class ConfigData
     {
         public static ConfigEntry<bool> EnableMod;
+        public static ConfigEntry<bool> EnableFrozenDisplayStands;
         public static ConfigEntry<float> DisplayStandEffectiveness;
     }
 }

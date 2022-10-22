@@ -21,7 +21,8 @@ namespace BetterDisplayStands
         {
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), pluginGuid);
 
-            ConfigData.EnableMod = Config.Bind("General", "EnableMod", true, "Whether the mod is enabled or not.");
+            ConfigData.EnableMod = Config.Bind("Toggles", "EnableMod", true, "Whether the mod is enabled or not.");
+            ConfigData.EnableFrozenDisplayStands = Config.Bind("Toggles", "EnableFrozenDisplayStands", true, "Whether display stands save their contents or not.")
             ConfigData.DisplayStandEffectiveness = Config.Bind("General", "DisplayStandEffectiveness", 1f, "From 0 to 1, how effective you'd like your display stands to be. 0.8 is the default value.");
         }
     }

@@ -24,15 +24,36 @@ namespace BetterDisplayStands
 
             foreach (Entity encourager in encouragers)
             {
+                EntityManager manager = World.DefaultGameObjectInjectionWorld.EntityManager;
+                bool hasComponent = manager.HasComponent<CPreservesContentsOvernight>(encourager);
+
                 if (ConfigData.EnableMod.Value)
                 {
                     COrderEncourager oe = new COrderEncourager() { Probability = ConfigData.DisplayStandEffectiveness.Value };
-                    World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData(encourager, oe);
+                    manager.SetComponentData(encourager, oe);
+
+                    if (ConfigData.EnableFrozenDisplayStands.Value)
+                    {
+                        if (!hasComponent)
+                            manager.AddComponentData(encourager, new CPreservesContentsOvernight());
+                    }
+                    else
+                    {
+                        if (hasComponent)
+                        {
+                            manager.RemoveComponent<CPreservesContentsOvernight>(encourager);
+                        }
+                    }
                 }
                 else
                 {
                     COrderEncourager oe = new COrderEncourager() { Probability = 0.8f };
                     World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData(encourager, oe);
+
+                    if (hasComponent)
+                    {
+                        manager.RemoveComponent<CPreservesContentsOvernight>(encourager);
+                    }
                 }
             }
         }
