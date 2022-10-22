@@ -4,3 +4,5 @@ Ever thought that it seemed a bit ridiculous to need 16 display stands in a rest
 With this mod, you now have the power to change this!
 
 From now on, you'll only ever need 1 display stand to get the same effect as an infinite number of display stands!
+
+Requires BepInEx.
