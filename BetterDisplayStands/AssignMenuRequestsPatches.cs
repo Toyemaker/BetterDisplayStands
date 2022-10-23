@@ -55,6 +55,8 @@ namespace BetterDisplayStands
                         manager.RemoveComponent<CPreservesContentsOvernight>(encourager);
                     }
                 }
+
+                
             }
         }
     }

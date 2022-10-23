@@ -13,9 +13,9 @@ namespace BetterDisplayStands
     [BepInProcess("PlateUp.exe")]
     public class BetterDisplayStandsMod : BaseUnityPlugin
     {
-        public const string pluginGuid = "sentheegg.plateup.betterdisplaystands";
+        public const string pluginGuid = "toyemaker.plateup.betterdisplaystands";
         public const string pluginName = "Better Display Stands";
-        public const string pluginVersion = "1.0";
+        public const string pluginVersion = "1.1";
 
         public void Awake()
         {
